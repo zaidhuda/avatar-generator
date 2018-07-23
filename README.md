@@ -1,24 +1,14 @@
-# README
+# Avatar Generator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Generates PNG initials avatar
 
-Things you may want to cover:
+## Options
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+|Name|Default|Description|
+|---|---|---|
+|name|John Doe|Initials will be generated from this name. Will be used to generate `background` if not specified.|
+|size|64|Size of the image.|
+|rounded|false|Generate round image.|
+|color|white|Font color.|
+|bg|indefined|Background color. Will use generated color from `name` if not specified.|
+|ratio|40|Ratio of font size to image.|
