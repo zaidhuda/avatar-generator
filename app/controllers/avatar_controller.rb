@@ -12,13 +12,14 @@ class AvatarController < ApplicationController
   private
 
   def avatar_params
+    cleaned_params = params.reject{|_, v| v.blank?}
     {
-      name: params.fetch(:name, 'John Doe'),
-      size: params.fetch(:size, 64),
-      color: params.fetch(:color, 'white'),
-      bg: params.fetch(:bg, nil),
-      ratio: params.fetch(:ratio, 45),
-      rounded: params.fetch(:rounded, false)
+      name: cleaned_params.fetch(:name, 'John Doe'),
+      size: cleaned_params.fetch(:size, 64),
+      color: cleaned_params.fetch(:color, 'white'),
+      bg: cleaned_params.fetch(:bg, nil),
+      ratio: cleaned_params.fetch(:ratio, 45),
+      rounded: cleaned_params.fetch(:rounded, false)
     }
   end
 end

@@ -1,4 +1,6 @@
-Rails.application.routes.default_url_options[:host] = 'avatar-generator.test'
 Rails.application.routes.draw do
-  root 'avatar#index'
+  root 'docs#index'
+  get 'i', to: 'avatar#index', as: 'img'
+  get 'options', to: 'docs#options'
+  get 'examples', to: 'docs#examples'
 end

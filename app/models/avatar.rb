@@ -7,11 +7,11 @@ class Avatar
   attr_accessor :rounded
 
   def initialize(args)
-    self.name = args[:name]
-    self.size = [args[:size].to_i, 512].min
+    self.name = args[:name] || 'John Doe'
+    self.size = [[args[:size].to_i, 512].min, 16].max
     self.color = args[:color]
     self.bg = args[:bg]
-    self.ratio = args[:ratio].to_i
+    self.ratio = [[args[:ratio].to_i, 80].min, 20].max
     self.rounded = args[:rounded].to_s.casecmp('true') == 0
   end
 
@@ -20,7 +20,8 @@ class Avatar
   end
 
   def background
-    bg || "##{Digest::MD5.hexdigest(name)[0, 6]}"
+    return "##{Digest::MD5.hexdigest(name)[0, 6]}" if bg.blank?
+    bg
   end
 
   def cache_key

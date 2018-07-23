@@ -1,0 +1,11 @@
+<h1>Examples</h1>
+  
+<% @examples.each do |option, value| %>
+  
+  <h2><%= option %></h2>
+  <div>
+    <% url = img_url(Hash[option, value]) %>
+      <%= link_to url, url, target: '_blank' %> <br>
+    <%= image_tag url %>
+  </div>
+<% end %>

@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AvatarGenerator</title>
+    <title>Avatar Generator</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <div class="navbar container">
+        <a id="author-name" class="alignable pull-left" href="/">Avatar Generator</a>
+        <ul class="alignable pull-right navbar-ul">
+          <li class="alignable pull-right nav-list">
+            <a href="https://github.com/hudadiaz/avatar-generator">Github</a>
+          </li>
+          <li class="alignable pull-right nav-list">
+            <%= link_to 'Examples', examples_path %>
+          </li>
+          <li class="alignable pull-right nav-list">
+            <%= link_to 'Options', options_path %>
+          </li>
+        </ul>
+      </div>
+      <div style="clear:both"></div>
+      <hr>
+      <div class="container content">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

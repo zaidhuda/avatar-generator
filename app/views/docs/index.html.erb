@@ -1,0 +1,18 @@
+<h1>URL</h1>
+<p>
+  <%= link_to @image_url, @image_url, target: '_blank' %>
+</p>
+
+<div class="preview">
+  <%= image_tag @image_url, alt: "avatar" %>
+</div>
+
+<form action="/">
+  <input type="text" value="<%= params[:name] %>" name="name" placeholder="name">
+  <input type="number" value="<%= params[:size] %>" name="size" placeholder="size">
+  <input type="text" value="<%= params[:color] %>" name="color" placeholder="color">
+  <input type="text" value="<%= params[:bg] %>" name="bg" placeholder="bg">
+  <input type="number" value="<%= params[:ratio] %>" name="ratio" placeholder="ratio">
+  <input type="text" value="<%= params[:rounded] %>" name="rounded" placeholder="rounded">
+  <input type="submit" value="Generate">
+</form>
